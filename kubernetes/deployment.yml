@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ymir
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: ymir
+    spec:
+      containers:
+      - name: ymir
+        image: # Insert URL to registry here
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+          initialDelaySeconds: 120
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+          initialDelaySeconds: 140
+          periodSeconds: 3
+
+      imagePullSecrets:
+        - name: registry.gitlab.com

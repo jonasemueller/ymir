@@ -3,8 +3,8 @@ o{mach/m2 [[aero "1.1.2"]
 
  mach/props [config (:deployment (aero.core/read-config "resources/config.edn" {:profile :prod}))
              version (roll.core/git-version)
-             s3-artefact (str "edge-" version "-standalone.jar")
-             uberjar "target/edge-app.jar"]
+             s3-artefact (str "ymir-" version "-standalone.jar")
+             uberjar "target/ymir-app.jar"]
 
  ;; Useful AWS targets
  mach/import [["https://raw.githubusercontent.com/juxt/mach/master/extensions/aws.mach.edn"
@@ -36,8 +36,8 @@ o{mach/m2 [[aero "1.1.2"]
                      ;; configure `:route-53-aliases` in the Roll
                      ;; config, which requires a route-53 zone-id you
                      ;; must manually configure.
-                     (assoc-in [:services :edge :launch-config :args :env-vars :edge-host]
-                               (roll.utils/$ [:aws-alb :edge :dns-name]))
+                     (assoc-in [:services :ymir :launch-config :args :env-vars :ymir-host]
+                               (roll.utils/$ [:aws-alb :ymir :dns-name]))
 
                      (roll.core/deployment->tf)
                      (roll.core/->tf-json))}}

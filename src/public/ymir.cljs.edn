@@ -1,0 +1,4 @@
+{:require  [example.ymir.alpha.core]
+ :init-fns [example.ymir.alpha.core/init!]
+ :compiler-options {:asset-path "/public/ymir.out"
+                    :foreign-libs  []}}

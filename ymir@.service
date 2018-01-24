@@ -1,0 +1,25 @@
+# Example systemd service file for Ymir
+# uses a parameter
+# 'systemctl start ymir@prod' will start Ymir with the profile to 'prod'
+
+# Dependencies:
+# Install boot /usr/local/bin/boot
+# Create a user ymir with a home directory of /home/ymir
+# Clone the ymir repo to a directory called 'ymir' under /home/ymir
+# Place this file under /etc/systemd/system on Arch Linux (and other systems that use systemd)
+# Ensure service survives reboot with 'systemctl enable ymir@prod'
+
+[Unit]
+Description=ymir
+
+[Service]
+Type=simple
+Environment="BOOT_JVM_OPTIONS='-Djava.awt.headless=true -Xms256m -Xmx512m'"
+Environment="DISPLAY=:0"
+ExecStart=/usr/local/bin/boot run -p %i
+Restart=always
+User=ymir
+WorkingDirectory=/home/ymir/ymir
+
+[Install]
+WantedBy=multi-user.target

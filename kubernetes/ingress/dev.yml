@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ymir-dev
+  namespace: dev
+spec:
+  rules:
+  - host: dev.ymir.example
+    http:
+      paths:
+      - backend:
+          serviceName: ymir
+          servicePort: 80

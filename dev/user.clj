@@ -10,7 +10,7 @@
    [clojure.java.io :as io]
    [com.stuartsierra.component :as component]
    [clojure.core.async :as a :refer [>! <! >!! <!! chan buffer dropping-buffer sliding-buffer close! timeout alts! alts!! go-loop]]
-   [edge.system :as system]
+   [example.ymir.alpha.system :as system]
    [reloaded.repl :refer [system init start stop go reset reset-all]]
    [schema.core :as s]
    [yada.test :refer [response-for]]))
@@ -38,7 +38,7 @@
     (when (seq errors) (into {} errors))))
 
 (defn test-all []
-  (run-all-tests #"edge.*test$"))
+  (run-all-tests #"example.ymir.alpha.*test$"))
 
 (defn reset-and-test []
   (reset)

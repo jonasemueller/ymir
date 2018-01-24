@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ymir
+  namespace: prod
+spec:
+  rules:
+  - host: www.ymir.example
+    http:
+      paths:
+      - backend:
+          serviceName: ymir
+          servicePort: 80
+  - host: ymir.example
+    http:
+      paths:
+      - backend:
+          serviceName: ymir
+          servicePort: 80
