@@ -1,5 +1,5 @@
 (ns example.ymir.alpha.link
-  (:require [example.ymir.alpha.routes :as routes]
+  (:require [example.ymir.alpha.frontend-routes :as routes]
             [pushy.core :as pushy]
             [bidi.bidi :as bidi]
             [cljs.spec.alpha :as s]

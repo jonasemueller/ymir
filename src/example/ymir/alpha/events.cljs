@@ -2,10 +2,9 @@
   (:require [clojure.string :as string]
             [example.ymir.alpha.app-db :as db]
             [example.ymir.alpha.re-frame :refer [>evt <sub]]
-            [example.ymir.alpha.routes :as routes]
             [example.ymir.alpha.scroll :as scroll]
             [example.ymir.alpha.link :as link]
-            [example.ymir.alpha.routes :as routes]
+            [example.ymir.alpha.frontend-routes :as routes]
             [re-frame.core :as rf]
             [cljs.spec.alpha :as s]))
 

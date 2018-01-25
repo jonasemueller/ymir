@@ -5,7 +5,7 @@
             [example.ymir.alpha.pages.about :as page.about]
             [example.ymir.alpha.pages.not-found :as page.not-found]
             [example.ymir.alpha.re-frame :refer [>evt <sub]]
-            [example.ymir.alpha.routes :as routes]
+            [example.ymir.alpha.frontend-routes :as routes]
             [re-frame.core :as rf]))
 
 (def pages {::routes/index [page.index/index]

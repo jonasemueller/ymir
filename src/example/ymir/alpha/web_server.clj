@@ -4,7 +4,7 @@
   (:require
    [bidi.bidi :refer [tag]]
    [bidi.vhosts :refer [make-handler vhosts-model]]
-   [example.ymir.alpha.routes :as frontend-routes]
+   [example.ymir.alpha.frontend-routes :as frontend-routes]
    [clojure.tools.logging :refer :all]
    [com.stuartsierra.component :refer [Lifecycle using]]
    [clojure.java.io :as io]

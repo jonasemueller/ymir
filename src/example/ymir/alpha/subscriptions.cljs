@@ -2,7 +2,7 @@
   (:require [cljs.spec.alpha :as s]
             [example.ymir.alpha.app-db :as db]
             [example.ymir.alpha.events :as events]
-            [example.ymir.alpha.routes :as routes]
+            [example.ymir.alpha.frontend-routes :as routes]
             [re-frame.core :as rf]))
 
 (rf/reg-sub
